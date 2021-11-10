@@ -24,9 +24,9 @@ public interface ContractRepository  extends JpaRepository<Contract,Long> {
             " SELECT PROVIDER_COMPANY, RECIPIENT_COMPANY FROM tree "+
             " UNION "+
             " SELECT PROVIDER_COMPANY, RECIPIENT_COMPANY FROM CONTRACT  "+
-            " WHERE RECIPIENT_COMPANY= :recipient OR PROVIDER_COMPANY= :provider ",
+            " WHERE PROVIDER_COMPANY= :provider ",
             nativeQuery = true)
-    List<List<Long>> findAllSleeves(@Param("recipient") Long recipient, @Param("provider") Long provider);
+    List<List<Long>> findAllSleeves( @Param("provider") Long provider, @Param("recipient") Long recipient);
 
 
 

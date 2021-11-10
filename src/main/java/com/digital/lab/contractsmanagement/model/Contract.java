@@ -17,11 +17,11 @@ public class Contract {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "PROVIDER_COMPANY")
+    @JoinColumn(name = "PROVIDER_COMPANY")//, referencedColumnName = "name"
     private Company provider;
 
     @ManyToOne
-    @JoinColumn(name="RECIPIENT_COMPANY")
+    @JoinColumn(name="RECIPIENT_COMPANY") //,referencedColumnName = "name"
     private Company recipient;
 }
 
